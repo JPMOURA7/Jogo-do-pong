@@ -7,5 +7,6 @@ function setup() {
 
 function draw() { 
   background(0); 
-  circle(xbolinha,ybolinha,diametrodabolinha) //circle(x,y,d) x=cordenada x,y=cordenada y e d=diametro do circulo } 
-  //11:52 do video criando a bolinha e cenário
+  circle(xbolinha,ybolinha,diametrodabolinha) 
+}
+  //circle(x,y,d) x=cordenada x,y=cordenada y e d=diametro do circulo 
