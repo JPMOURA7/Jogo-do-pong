@@ -33,6 +33,8 @@ function draw() {
   raqueteplayer();
   raqueteinimiga();
   movimentararaquete();
+  verificacolisaocomaraquete();
+  verificacolisaocomaraqueteinimiga();
 }
   function verificartoquenasbordas(){
     if(xbolinha + raio > width || xbolinha - raio< 0){
@@ -61,7 +63,19 @@ function draw() {
       yraquete +=10
     }
   }
-function raqueteinimiga(){
+  function verificacolisaocomaraquete(){
+    
+    if (xbolinha < xraquete + Comprimentoraquete)
+      velocidadexdabolinha *=-1;
+      
+  }
+  function verificacolisaocomaraqueteinimiga(){
+    
+    if (xbolinha > xraqueteinimiga - Comprimentoraquete)
+      velocidadexdabolinha *=-1;
+      
+  }
+  function raqueteinimiga(){
     rect(xraqueteinimiga,yraqueteinimiga,Comprimentoraquete,Alturaraquete)
 }
   //rect(x,y,w,h,tl,tr,br,bl)x e y=coordenadas que ele aparece,w e h=largura e altura,
