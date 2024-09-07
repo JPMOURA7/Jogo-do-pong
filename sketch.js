@@ -1,4 +1,4 @@
-//tamanho do circulo
+//Var da bolinha
 let xbolinha = 400;
 let ybolinha = 200;
 let diametrodabolinha = 22;
@@ -10,17 +10,31 @@ let raio = diametrodabolinha / 2;
 //Movimentação da bolinha
 let velocidadexdabolinha = 2;
 let velocidadeydabolinha = 2;
+
+//Var da raquete do player
+let xraquete = 20;
+let yraquete = 150;
+let wraquete = 10;
+let hraquete = 100;
+
+//Var da raquete inimiga
+let xraqueteinimiga = 780;
+let yraqueteinimiga = 150;
+
 function setup() { 
   createCanvas(800, 400); 
 }
 
 function draw() { 
   background(0); 
-  circle(xbolinha,ybolinha,diametrodabolinha);
-  xbolinha += velocidadexdabolinha;
-  ybolinha += velocidadeydabolinha;
-  
-  if(xbolinha + raio > width || xbolinha - raio< 0){
+  mostrarbolinha();
+  movimentodabolinha();
+  verificartoquenasbordas();
+  raqueteplayer();
+  raqueteinimiga();
+}
+  function verificartoquenasbordas(){
+    if(xbolinha + raio > width || xbolinha - raio< 0){
     velocidadexdabolinha *=-1;
     
   }
@@ -28,6 +42,18 @@ function draw() {
     velocidadeydabolinha *=-1;
     
   }
+  }
+  function mostrarbolinha(){
+    circle(xbolinha,ybolinha,diametrodabolinha);
 }
-
+  function movimentodabolinha(){                       xbolinha += velocidadexdabolinha;
+    ybolinha += velocidadeydabolinha;
+  }
+  function raqueteplayer(){
+    rect(xraquete,yraquete,wraquete,hraquete)
+}
+function raqueteinimiga(){
+    rect(xraqueteinimiga,yraqueteinimiga,wraquete,hraquete)
+}
+  //rect(x,y,w,h,tl,tr,br,bl)x e y=coordenadas que ele aparece,w e h=largura e altura,
   //circle(x,y,d) x=cordenada x,y=cordenada y e d=diametro do circulo 
