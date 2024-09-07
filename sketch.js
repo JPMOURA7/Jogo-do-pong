@@ -20,6 +20,9 @@ let Alturaraquete = 100;
 //Var da raquete inimiga
 let xraqueteinimiga = 780;
 let yraqueteinimiga = 150;
+let velocidadeYinimiga;
+
+let colidiu=false;
 
 function setup() { 
   createCanvas(800, 400); 
@@ -33,8 +36,12 @@ function draw() {
   raqueteplayer();
   raqueteinimiga();
   movimentararaquete();
-  verificacolisaocomaraquete();
-  verificacolisaocomaraqueteinimiga();
+  //verificacolisaocomaraquete();
+  //verificacolisaocomaraqueteinimiga();
+  colisaoraquetebiblioteca();
+  colisaoraqueteinimigabiblioteca();
+  //movimentaraqueteinimiga();
+  movimentoraqueteinimiga();
 }
   function verificartoquenasbordas(){
     if(xbolinha + raio > width || xbolinha - raio< 0){
@@ -65,18 +72,44 @@ function draw() {
   }
   function verificacolisaocomaraquete(){
     
-    if (xbolinha < xraquete + Comprimentoraquete)
+    if (xbolinha - raio < xraquete + Comprimentoraquete && ybolinha - raio < yraquete + Alturaraquete && ybolinha + raio > yraquete)
       velocidadexdabolinha *=-1;
       
   }
   function verificacolisaocomaraqueteinimiga(){
     
-    if (xbolinha > xraqueteinimiga - Comprimentoraquete)
+    if (xbolinha + raio > xraqueteinimiga - Comprimentoraquete && ybolinha + raio < yraqueteinimiga - Alturaraquete && ybolinha - raio > yraqueteinimiga)
       velocidadexdabolinha *=-1;
       
   }
   function raqueteinimiga(){
     rect(xraqueteinimiga,yraqueteinimiga,Comprimentoraquete,Alturaraquete)
 }
+  function colisaoraquetebiblioteca (){
+    
+    colidiu = collideRectCircle(xraquete, yraquete, Comprimentoraquete, Alturaraquete, xbolinha, ybolinha, raio);
+    if(colidiu){
+      velocidadexdabolinha *= -1
+    }
+  }
+  function colisaoraqueteinimigabiblioteca (){
+    
+    colidiu = collideRectCircle(xraqueteinimiga, yraqueteinimiga, Comprimentoraquete, Alturaraquete, xbolinha, ybolinha, raio);
+    if(colidiu){
+      velocidadexdabolinha *= -1
+    }
+  }
+  function movimentaraqueteinimiga (){
+    velocidadeyinimiga = ybolinha - yraqueteinimiga / 2 - 30;
+    yraqueteinimiga += velocidadeyinimiga
+  }
+  function movimentoraqueteinimiga(){
+    if(keyIsDown(87)){
+      yraqueteinimiga -=10;
+    } 
+    if(keyIsDown(83)){
+      yraqueteinimiga +=10;
+    }
+  }
   //rect(x,y,w,h,tl,tr,br,bl)x e y=coordenadas que ele aparece,w e h=largura e altura,
   //circle(x,y,d) x=cordenada x,y=cordenada y e d=diametro do circulo 
