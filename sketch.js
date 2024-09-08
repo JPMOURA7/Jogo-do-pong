@@ -8,8 +8,8 @@ let raio = diametrodabolinha / 2;
 //é necessario para dar colisao as bordas do circulo e nao ao seu centro
 
 //Movimentação da bolinha
-let velocidadexdabolinha = 2;
-let velocidadeydabolinha = 2;
+let velocidadexdabolinha = 6;
+let velocidadeydabolinha = 6;
 
 //Var da raquete do player
 let xraquete = 20;
@@ -23,6 +23,10 @@ let yraqueteinimiga = 150;
 let velocidadeYinimiga;
 
 let colidiu=false;
+
+//placar
+let meuspontos= 0;
+let pontosdooponente= 0;
 
 function setup() { 
   createCanvas(800, 400); 
@@ -42,6 +46,8 @@ function draw() {
   colisaoraqueteinimigabiblioteca();
   //movimentaraqueteinimiga();
   movimentoraqueteinimiga();
+  incluirplacar();
+  marcarpontos();
 }
   function verificartoquenasbordas(){
     if(xbolinha + raio > width || xbolinha - raio< 0){
@@ -100,7 +106,7 @@ function draw() {
     }
   }
   function movimentaraqueteinimiga (){
-    velocidadeyinimiga = ybolinha - yraqueteinimiga / 2 - 30;
+    velocidadeyinimiga = ybolinha - yraqueteinimiga - Comprimentoraquete / 2 - 40;
     yraqueteinimiga += velocidadeyinimiga
   }
   function movimentoraqueteinimiga(){
@@ -109,6 +115,19 @@ function draw() {
     } 
     if(keyIsDown(83)){
       yraqueteinimiga +=10;
+    }
+  }
+  function incluirplacar(){
+    fill(255);
+    text(meuspontos,378,26);
+    text(pontosdooponente,478,26);
+  }
+  function marcarpontos(){
+    if (xbolinha + raio > 800){
+      meuspontos += 1;
+    }
+    if(xbolinha - raio < 0){
+      pontosdooponente +=1;
     }
   }
   //rect(x,y,w,h,tl,tr,br,bl)x e y=coordenadas que ele aparece,w e h=largura e altura,
