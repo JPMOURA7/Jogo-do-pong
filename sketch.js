@@ -118,9 +118,15 @@ function draw() {
     }
   }
   function incluirplacar(){
+    textAlign(CENTER);
+    textSize(16);
+    stroke("white")
+    fill("blue");
+    rect (378,10,40,20);
+    rect (478,10,40,20);
     fill(255);
-    text(meuspontos,378,26);
-    text(pontosdooponente,478,26);
+    text(meuspontos,398,26);
+    text(pontosdooponente,498,26);
   }
   function marcarpontos(){
     if (xbolinha + raio > 800){
