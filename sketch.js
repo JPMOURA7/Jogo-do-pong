@@ -28,8 +28,24 @@ let colidiu=false;
 let meuspontos= 0;
 let pontosdooponente= 0;
 
+//sons
+let raquetada;
+let ponto;
+let trilha;
+
+//escolha de jogar solo ou multiplayer
+let Solo;
+let Multiplayer;
+
+function preload(){
+  trilha = loadsound("trilha.mp3")
+  ponto = loadsound("ponto.mp3")
+  raquetada = loadsound("raquetada.mp3")
+}
+
 function setup() { 
   createCanvas(800, 400); 
+  trilha.loop();
 }
 
 function draw() { 
@@ -96,6 +112,7 @@ function draw() {
     colidiu = collideRectCircle(xraquete, yraquete, Comprimentoraquete, Alturaraquete, xbolinha, ybolinha, raio);
     if(colidiu){
       velocidadexdabolinha *= -1
+      raquetada.play();
     }
   }
   function colisaoraqueteinimigabiblioteca (){
@@ -103,6 +120,7 @@ function draw() {
     colidiu = collideRectCircle(xraqueteinimiga, yraqueteinimiga, Comprimentoraquete, Alturaraquete, xbolinha, ybolinha, raio);
     if(colidiu){
       velocidadexdabolinha *= -1
+      raquetada.play();
     }
   }
   function movimentaraqueteinimiga (){
@@ -131,9 +149,11 @@ function draw() {
   function marcarpontos(){
     if (xbolinha + raio > 800){
       meuspontos += 1;
+      ponto.play();
     }
     if(xbolinha - raio < 0){
       pontosdooponente +=1;
+      ponto.play();
     }
   }
   //rect(x,y,w,h,tl,tr,br,bl)x e y=coordenadas que ele aparece,w e h=largura e altura,
