@@ -140,11 +140,11 @@ function draw() {
     textSize(16);
     stroke("white")
     fill("blue");
-    rect (278,10,40,20);
-    rect (378,10,40,20);
+    rect (350,10,40,20);
+    rect (450,10,40,20);
     fill(255);
-    text(meuspontos,298,26);
-    text(pontosdooponente,398,26);
+    text(meuspontos,350,26);
+    text(pontosdooponente,450,26);
   }
   function marcarpontos(){
     if (xbolinha + raio > 800){
