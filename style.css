@@ -52,13 +52,16 @@ canvas {
 	width:940px;
 }
 header{
-	background:gray;
+	background:#C0C0C0;
 }
 h1{
 	font-size:30px;
-	font-weight:500;
+	font-weight:700;
 }
 h2{
-	font-size:18px;
-	font-weight:100;
+	
+	font-weight:400;
+}
+p{
+	font-weight:300;
 }
