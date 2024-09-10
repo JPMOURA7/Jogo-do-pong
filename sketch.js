@@ -143,8 +143,8 @@ function draw() {
     rect (350,10,40,20);
     rect (450,10,40,20);
     fill(255);
-    text(meuspontos,350,26);
-    text(pontosdooponente,450,26);
+    text(meuspontos,370,26);
+    text(pontosdooponente,470,26);
   }
   function marcarpontos(){
     if (xbolinha + raio > 800){
