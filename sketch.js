@@ -49,21 +49,22 @@ function setup() {
 }
 
 function draw() { 
-  background(0); 
-  mostrarbolinha();
-  movimentodabolinha();
-  verificartoquenasbordas();
-  raqueteplayer();
-  raqueteinimiga();
-  movimentararaquete();
-  //verificacolisaocomaraquete();
-  //verificacolisaocomaraqueteinimiga();
-  colisaoraquetebiblioteca();
-  colisaoraqueteinimigabiblioteca();
-  //movimentaraqueteinimiga();
-  movimentoraqueteinimiga();
-  incluirplacar();
-  marcarpontos();
+  
+    background(0); 
+    mostrarbolinha();
+    movimentodabolinha();
+    verificartoquenasbordas();
+    raqueteplayer();
+    raqueteinimiga();
+    movimentararaquete();
+    //verificacolisaocomaraquete();
+    //verificacolisaocomaraqueteinimiga();
+    colisaoraquetebiblioteca();
+    colisaoraqueteinimigabiblioteca();
+    //movimentaraqueteinimiga();
+   movimentoraqueteinimiga();
+   incluirplacar();
+   marcarpontos();
 }
   function verificartoquenasbordas(){
     if(xbolinha + raio > width || xbolinha - raio< 0){
@@ -140,11 +141,11 @@ function draw() {
     textSize(16);
     stroke("white")
     fill("blue");
-    rect (350,10,40,20);
-    rect (450,10,40,20);
+    rect (278,10,40,20);
+    rect (378,10,40,20);
     fill(255);
-    text(meuspontos,370,26);
-    text(pontosdooponente,470,26);
+    text(meuspontos,298,26);
+    text(pontosdooponente,398,26);
   }
   function marcarpontos(){
     if (xbolinha + raio > 800){
@@ -154,6 +155,14 @@ function draw() {
     if(xbolinha - raio < 0){
       pontosdooponente +=1;
       ponto.play();
+    }
+  }
+  function fimdejogo(){
+    if (meuspontos == 5){
+      text(Player1Venceu,400,200)
+    }
+    if (pontosdooponente == 5){
+      text(Player2Venceu,400,200)
     }
   }
   //rect(x,y,w,h,tl,tr,br,bl)x e y=coordenadas que ele aparece,w e h=largura e altura,
