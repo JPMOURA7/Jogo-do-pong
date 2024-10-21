@@ -11,6 +11,6 @@ Em desenvolvimento...
 
 <h1>Controles do Jogo:</h1>
 
-Para controlar a raquete à esquerda: aperte seta para cima para move-la para cima e seta para baixo para move-la para baixo.
+Para controlar a raquete à esquerda: aperte W para move-la para cima e S para move-la para baixo.
 
-Para controlar a raquete à direita: aperte W para move-la para cima e S para move-la para baixo.
+Para controlar a raquete à direita: aperte U para move-la para cima e J para move-la para baixo.
