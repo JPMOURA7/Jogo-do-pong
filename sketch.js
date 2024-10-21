@@ -160,10 +160,24 @@ function draw() {
   }
   function fimdejogo(){
     if (meuspontos == 5){
-      text(Player1Venceu,400,200)
+      trilha.stop();
+      textAlign(CENTER);
+      textSize(40);
+      fill(color('#ff0000'));
+      rect(280,130,300,100,20);
+      fill('white');
+      text("Player2Venceu",418,200);
+      noLoop();
     }
     if (pontosdooponente == 5){
-      text(Player2Venceu,400,200)
+      trilha.stop();
+      textAlign(CENTER);
+      textSize(40);
+      fill(color('#ff0000'));
+      rect(260,130,300,100,20);
+      fill('white');
+      text("Player2Venceu",418,200);
+      noLoop();
     }
   }
   //rect(x,y,w,h,tl,tr,br,bl)x e y=coordenadas que ele aparece,w e h=largura e altura,
