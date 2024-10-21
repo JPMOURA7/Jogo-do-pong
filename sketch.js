@@ -65,6 +65,7 @@ function draw() {
    movimentoraqueteinimiga();
    incluirplacar();
    marcarpontos();
+    fimdejogo();
 }
   function verificartoquenasbordas(){
     if(xbolinha + raio > width || xbolinha - raio< 0){
