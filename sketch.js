@@ -79,7 +79,8 @@ function draw() {
   function mostrarbolinha(){
     circle(xbolinha,ybolinha,diametrodabolinha);
 }
-  function movimentodabolinha(){                       xbolinha += velocidadexdabolinha;
+  function movimentodabolinha(){                       
+    xbolinha += velocidadexdabolinha;
     ybolinha += velocidadeydabolinha;
   }
   function raqueteplayer(){
@@ -141,11 +142,11 @@ function draw() {
     textSize(16);
     stroke("white")
     fill("blue");
-    rect (288,10,40,20);
-    rect (388,10,40,20);
+    rect (298,10,40,20);
+    rect (398,10,40,20);
     fill(255);
-    text(meuspontos,308,26);
-    text(pontosdooponente,408,26);
+    text(meuspontos,318,26);
+    text(pontosdooponente,418,26);
   }
   function marcarpontos(){
     if (xbolinha + raio > 800){
