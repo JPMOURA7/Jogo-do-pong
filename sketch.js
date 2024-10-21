@@ -85,10 +85,10 @@ function draw() {
     rect(xraquete,yraquete,Comprimentoraquete,Alturaraquete)
 }
   function movimentararaquete(){
-    if (keyIsDown(85)){
+    if (keyIsDown(87))
       yraquete -=10
     }
-    if (keyIsDown(74)){
+    if (keyIsDown(83)){
       yraquete +=10
     }
   }
@@ -128,10 +128,10 @@ function draw() {
     yraqueteinimiga += velocidadeyinimiga
   }
   function movimentoraqueteinimiga(){
-    if(keyIsDown(87)){
+    if(keyIsDown(85)){
       yraqueteinimiga -=10;
     } 
-    if(keyIsDown(83)){
+    if(keyIsDown(74)){
       yraqueteinimiga +=10;
     }
   }
