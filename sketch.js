@@ -86,10 +86,10 @@ function draw() {
 }
   function movimentararaquete(){
     if (keyIsDown(87)){
-      yraquete -=10
+      yraquete -=10;
     }
     if (keyIsDown(83)){
-      yraquete +=10
+      yraquete +=10;
     }
   }
   function verificacolisaocomaraquete(){
