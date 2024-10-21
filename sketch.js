@@ -85,7 +85,7 @@ function draw() {
     rect(xraquete,yraquete,Comprimentoraquete,Alturaraquete)
 }
   function movimentararaquete(){
-    if (keyIsDown(87))
+    if (keyIsDown(87)){
       yraquete -=10
     }
     if (keyIsDown(83)){
