@@ -5,10 +5,6 @@ html, body {
 canvas {
   display: block;
 }
-.logo{
-	width: 100px;
-	height:auto;
-}
 .linha{
 	width:960px;
 	margin:0 auto;
