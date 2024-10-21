@@ -5,6 +5,9 @@ html, body {
 canvas {
   display: block;
 }
+.logo{
+	width: 100px;
+}
 .linha{
 	width:960px;
 	margin:0 auto;
