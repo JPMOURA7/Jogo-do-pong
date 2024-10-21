@@ -7,6 +7,7 @@ canvas {
 }
 .logo{
 	width: 50px;
+	height:auto;
 }
 .linha{
 	width:960px;
